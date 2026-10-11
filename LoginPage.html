@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to the Login Page</h1>
+    <div class="container">
+
+        <div class="form-box">
+
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Login to your account</p>
+
+            <form onsubmit="login(event)">
+
+
+                <input type="email" id="email" placeholder="Email" required>
+                <br><br>
+
+                <input type="password" id="password" placeholder="Password" required>
+                <br><br>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="message"></p>
+            <p>Don't have an account?
+                <br>
+                <button onclick="window.location.href='registerPage.html'">
+                    Register
+                </button>
+            </p>
+        </div>
+
+    </div>
+    <script>
+        function login(event) {
+
+            event.preventDefault();
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let savedEmail = localStorage.getItem("userEmail");
+            let savedPassword = localStorage.getItem("userPassword");
+
+            if (email === savedEmail && password === savedPassword) {
+
+                localStorage.setItem("isLoggedIn", "true");
+
+                window.location.href = "HomePage.html";
+
+            } else {
+
+                document.getElementById("message").innerText ="Invalid email or password";
+            }
+        }
+    </script>
+</body>
+
+</html>

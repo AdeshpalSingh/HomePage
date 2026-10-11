@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>My Website</h2>
+
+        <button onclick="logout()">Logout</button>
+
+    </nav>
+
+    <main class="home-container">
+
+        <h1>Welcome, <span id="userName"></span>!</h1>
+
+        <p class="welcome-text">
+            Welcome to homepage. You are successfully logged in !
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3> About Us </h3>
+                <p> View Personal Information.</p>
+            </div>
+
+            <div class="card">
+                <h3> Projects </h3>
+                <p>Check your Projects</p>
+            </div>
+
+            <div class="card">
+                <h3> Settings </h3>
+                <p> Manage your Settings. </p>
+            </div>
+
+        </div>
+
+    </main>
+
+<script>
+    function logout() {
+
+    localStorage.removeItem("isLoggedIn");
+
+    window.location.href = "LoginPage.html";
+}
+</script>
+
+</body>
+
+</html>
